@@ -8,24 +8,29 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+    if (typeof window === "undefined") {
+      const handleScroll = () => {
+        // @ts-ignore
+        const currentScrollY = window.scrollY;
 
-      if (currentScrollY < window.innerHeight * 0.3) {
-        setShowNavbar(true);
-      } else if (currentScrollY > lastScrollY) {
-        setShowNavbar(false);
-      } else if (lastScrollY - currentScrollY > 20) {
-        setShowNavbar(true);
-      }
+        // @ts-ignore
+        if (currentScrollY < window.innerHeight * 0.3) {
+          setShowNavbar(true);
+        } else if (currentScrollY > lastScrollY) {
+          setShowNavbar(false);
+        } else if (lastScrollY - currentScrollY > 20) {
+          setShowNavbar(true);
+        }
 
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+        setLastScrollY(currentScrollY);
+      };
+      // @ts-ignore
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        // @ts-ignore
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
   }, [lastScrollY]);
 
   return (
@@ -36,9 +41,25 @@ const Navbar = () => {
       top="0"
       w="100%"
       py="4"
-      shadow={window.scrollY === 0 ? "none" : "sm"}
+      shadow={
+        // @ts-ignore
+        typeof window !== undefined
+          ? // @ts-ignore
+            window.scrollY === 0
+            ? "none"
+            : "sm"
+          : "sm"
+      }
       color={darkPrimeColor}
-      bg={window.scrollY === 0 ? "transparent" : "white"}
+      bg={
+        // @ts-ignore
+        typeof window !== undefined
+          ? // @ts-ignore
+            window.scrollY === 0
+            ? "transparent"
+            : "white"
+          : "white"
+      }
       alignItems="center"
       justify="space-between"
       style={{ transition: "transform 0.3s ease-in-out" }}
