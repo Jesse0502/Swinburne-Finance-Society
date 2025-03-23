@@ -16,6 +16,7 @@ const OurEvents = () => {
         bg={"url(./white-bg-design.svg)"}
         h="78vh"
       >
+        {/* @ts-ignore */}
         <Navbar eventsPage={true} />
         <Flex
           alignItems={"center"}
@@ -44,7 +45,7 @@ const OurEvents = () => {
         <Flex gap="3" w="full">
           {["All Events", "Upcoming Events", "Past Events"].map((i, idx) => (
             <Badge
-            key={i}
+              key={i}
               p="3"
               rounded="full"
               bg={idx === activeTab ? "black" : "gray.200"}

@@ -51,6 +51,7 @@ export default function Events() {
       return newTab;
     });
     if (carouselRef.current) {
+      // @ts-ignore
       carouselRef.current.scrollTo({
         left: 380,
         behavior: "smooth",
@@ -64,7 +65,7 @@ export default function Events() {
       return newTab;
     });
   };
-
+  // @ts-ignore
   const getOpacity = (index) => {
     const distance = Math.abs(index - activeTab);
     if (distance === 0) return 1;
@@ -73,6 +74,7 @@ export default function Events() {
     return 0.2;
   };
 
+  // @ts-ignore
   const getScale = (index) => {
     const distance = Math.abs(index - activeTab);
     if (distance === 0) return 1;
@@ -80,18 +82,21 @@ export default function Events() {
     if (distance === 2) return 0.9;
     return 0.85;
   };
-
+  // @ts-ignore
   const scrollToTab = (index) => {
     if (carouselRef.current) {
+      // @ts-ignore
       const tabElement = carouselRef.current.children[index];
       if (tabElement) {
         const tabRect = tabElement.getBoundingClientRect();
+        // @ts-ignore
         const carouselRect = carouselRef.current.getBoundingClientRect();
         const scrollLeft = Math.round(
           tabRect.left -
             carouselRect.left -
             (carouselRect.width - tabRect.width) / 2
         );
+        // @ts-ignore
         carouselRef.current.scrollTo({
           left: scrollLeft,
           behavior: "smooth",
