@@ -1,37 +1,31 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import { useLayoutEffect, useState, useRef } from "react";
 import { darkPrimeColor } from "@/helpers/constants";
 import { Button, Flex, Image, Link } from "@chakra-ui/react";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollY = useRef(0);
 
-  useEffect(() => {
-    if (typeof window === "undefined") {
-      const handleScroll = () => {
-        // @ts-ignore
-        const currentScrollY = window.scrollY;
+  useLayoutEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = document.documentElement.scrollTop;
 
-        // @ts-ignore
-        if (currentScrollY < window.innerHeight * 0.3) {
-          setShowNavbar(true);
-        } else if (currentScrollY > lastScrollY) {
-          setShowNavbar(false);
-        } else if (lastScrollY - currentScrollY > 20) {
-          setShowNavbar(true);
-        }
+      if (currentScrollY < 100) {
+        setShowNavbar(true);
+      } else if (currentScrollY > lastScrollY.current) {
+        setShowNavbar(false);
+      } else if (lastScrollY.current - currentScrollY > 20) {
+        setShowNavbar(true);
+      }
 
-        setLastScrollY(currentScrollY);
-      };
-      // @ts-ignore
-      window.addEventListener("scroll", handleScroll);
-      return () => {
-        // @ts-ignore
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, [lastScrollY]);
+      lastScrollY.current = currentScrollY;
+    };
+
+    document.addEventListener("scroll", handleScroll);
+    return () => document.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <Flex
@@ -41,25 +35,9 @@ const Navbar = () => {
       top="0"
       w="100%"
       py="4"
-      shadow={
-        // @ts-ignore
-        typeof window !== undefined
-          ? // @ts-ignore
-            window.scrollY === 0
-            ? "none"
-            : "sm"
-          : "sm"
-      }
+      shadow={lastScrollY.current === 0 ? "none" : "sm"}
       color={darkPrimeColor}
-      bg={
-        // @ts-ignore
-        typeof window !== undefined
-          ? // @ts-ignore
-            window.scrollY === 0
-            ? "transparent"
-            : "white"
-          : "white"
-      }
+      bg={lastScrollY.current === 0 ? "transparent" : "white"}
       alignItems="center"
       justify="space-between"
       style={{ transition: "transform 0.3s ease-in-out" }}
