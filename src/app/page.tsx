@@ -67,7 +67,9 @@ export default function Home() {
             {socialMediaIcons.map(({ src, label, link }) => (
               <Box
                 as={Link}
+                // @ts-ignore
                 href={link}
+                // @ts-ignore
                 _target={"_blank"}
                 zIndex={9999}
                 position="relative"
@@ -116,6 +118,7 @@ export default function Home() {
                     fontSize="sm"
                     height="40px"
                     textAlign={"left"}
+                    // @ts-ignore
                     variants={{
                       rest: { opacity: 0, width: "40px" },
                       hover: { opacity: 1, width: "100px" },
