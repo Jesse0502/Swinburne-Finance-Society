@@ -26,17 +26,17 @@ const EventTab = ({ price = 0 }: { price?: Number }) => {
               //   h="63px"
               pt="4"
               w="inherit"
-              lineClamp={3} // Chakra UI's prop for multi-line ellipsis
+              lineClamp={2} // Chakra UI's prop for multi-line ellipsis
               overflow={"clip"}
             >
               Networking night
             </Text>
             <Text
-              lineClamp={2} // Chakra UI's prop for multi-line ellipsis
+              lineClamp={3} // Chakra UI's prop for multi-line ellipsis
               //   overflow="hidden"
               //   textOverflow="ellipsis"
               fontSize="lg"
-              h="56px"
+              // h="56px"
               mt="3"
               w="inherit"
               opacity="0.7"
@@ -49,7 +49,7 @@ const EventTab = ({ price = 0 }: { price?: Number }) => {
               dicta enim. Dignissimos explicabo eum ad, rerum dolor eveniet hic
               amet animi minima odit ut at quidem consequatur soluta distinctio? */}
             </Text>
-            <Flex mt="5" justify={"space-between"} w="90%">
+            <Flex mt="10" justify={"space-between"} w="90%">
               <Text opacity="0.8">Location</Text>
               <Text>AGSE Building</Text>
             </Flex>
