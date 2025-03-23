@@ -87,7 +87,7 @@ const AboutUs = () => {
                 h="30vh"
                 key={12}
               >
-                <Avatar.Fallback name="lal land" />
+                <Avatar.Fallback>lala land</Avatar.Fallback>
                 <Avatar.Image src={img} />
               </Avatar.Root>
               <Text mt="5" fontSize={"3xl"} color={darkPrimeColor}>
