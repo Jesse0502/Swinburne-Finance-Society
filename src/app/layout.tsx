@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
-      <body className={`${inter.variable} font-sans`}>
+      <body className={`${inter} font-sans`}>
         <Provider defaultTheme="light">{children}</Provider>
       </body>
     </html>
