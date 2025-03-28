@@ -11,22 +11,24 @@ const OurEvents = () => {
     <Box>
       <Box
         w="full"
-        bgRepeat={"no-repeat"}
-        // bg={"url(./white-bg-design-2.avif)"}
-        bg={"url(./white-bg-design.svg)"}
-        h="78vh"
+        // bgRepeat={"no-repeat"}
+        bgPos={["center", "left"]}
+        // bgSize={""}
+        bgImg={["url(./white-bg-design-2.avif)", "url(./white-bg-design.svg)"]}
+        // bg={"url(./white-bg-design.svg)"}
+        h={["65vh", "78vh"]}
       >
         {/* @ts-ignore */}
         <Navbar eventsPage={true} />
         <Flex
           alignItems={"center"}
           flexDir={"column"}
-          mt="20"
+          mt={["14", "20"]}
           h="full"
-          px="48"
+          px={["4", "48"]}
           w="full"
         >
-          <Text fontSize={"6xl"} textAlign={"center"}>
+          <Text fontSize={["4xl", "6xl"]} textAlign={"center"}>
             Grow Your Network & Skills with Our Events
           </Text>
           <Badge p="3" rounded="md" variant={"surface"} mt="2" size="lg">
@@ -40,17 +42,17 @@ const OurEvents = () => {
         mt="9"
         flexDir={"column"}
         justifyContent={"start"}
-        px="32"
+        px={["4", "32"]}
       >
         <Flex gap="3" w="full">
           {["All Events", "Upcoming Events", "Past Events"].map((i, idx) => (
             <Badge
               key={i}
-              p="3"
+              p={["1.4vh", "3"]}
               rounded="full"
               bg={idx === activeTab ? "black" : "gray.200"}
               color={idx === activeTab ? "white" : "black"}
-              size="lg"
+              size={["sm", "lg"]}
             >
               {i}
             </Badge>

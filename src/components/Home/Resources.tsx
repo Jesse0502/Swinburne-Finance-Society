@@ -3,10 +3,10 @@ import { Box, Flex, Heading, Image, Link, Text } from "@chakra-ui/react";
 
 const Resources = () => {
   return (
-    <Box pt="24" pb="16" w="full" px="16" position="relative">
+    <Box pt="24" pb="16" w="full" px={["4", "16"]} position="relative">
       <Flex alignItems={"center"}>
         <Text
-          fontSize="2xl"
+          fontSize={["xl", "2xl"]}
           fontWeight="light"
           fontFamily={"mono-serif"}
           opacity={0.6}
@@ -15,11 +15,17 @@ const Resources = () => {
         </Text>
         <Box h="2px" ml="4" w="50px" bg="gray.400" />
       </Flex>
-      <Heading pt="6" pb="12" fontWeight={"bolder"} fontSize="5xl">
+      <Heading pt="6" pb="12" fontWeight={"bolder"} fontSize={["4xl", "5xl"]}>
         Financial Resources
       </Heading>
-      <Flex gap="20" mt="16" justify="space-between" alignItems={"start"}>
-        <Text flex="1" fontSize={"2xl"}>
+      <Flex
+        gap="20"
+        flexDir={["column", "row"]}
+        mt="16"
+        justify="space-between"
+        alignItems={"start"}
+      >
+        <Text flex="1" fontSize={"xl"}>
           Varsity is an extensive and in-depth collection of stock market and
           financial lessons created by Karthik Rangappa at Zerodha
         </Text>
@@ -29,7 +35,7 @@ const Resources = () => {
             _hover={{ scale: 1.01 }}
             shadow="lg"
             flexShrink={0}
-            h="400px"
+            h={["240px", "400px"]}
             src="zerodha.jpg"
           />
           <Box>
@@ -49,14 +55,20 @@ const Resources = () => {
           </Box>
         </Flex>
       </Flex>
-      <Flex gap="20" mt="32" justify="space-between" alignItems={"start"}>
+      <Flex
+        gap="20"
+        flexDir={["column-reverse", "row"]}
+        mt="32"
+        justify="space-between"
+        alignItems={"start"}
+      >
         <Flex flex="1" alignItems={"center"} gap="9">
           <Image
             transition="transform 0.3s ease-in-out, opacity 0.3s ease-in-out"
             _hover={{ scale: 1.01 }}
             shadow="lg"
             flexShrink={0}
-            h="400px"
+            h={["240px", "400px"]}
             src="think-and-grow-rich.jpg"
           />
           <Box textAlign={"left"}>
@@ -73,7 +85,7 @@ const Resources = () => {
             </Text>
           </Box>
         </Flex>
-        <Text flex="1" fontSize={"2xl"} textAlign={"right "}>
+        <Text flex="1" fontSize={["xl", "2xl"]} textAlign={["left", "right"]}>
           One of the most popular personal development and self-improvement
           books of all time, Think and Grow Rich has sold over 100M copies
           worldwide!

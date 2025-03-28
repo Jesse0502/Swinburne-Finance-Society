@@ -16,30 +16,36 @@ const AboutUs = () => {
   return (
     <Box>
       <Navbar />
-      <Box bg={"black"} pos="relative" h="450px" w="full">
+      <Box bg={"black"} pos="relative" h={["320px", "450px"]} w="full">
         <Image src="Swinburne-Library.jpg" opacity={0.3} h="inherit" w="full" />
         <Center
           flexDir={"column"}
           alignItems={"start"}
           color={"white"}
           pos="absolute"
-          top="43%"
+          top={["30%", "43%"]}
           w="full"
-          px="32"
+          px={["5", "32"]}
         >
           <Text fontFamily={"mono"} opacity={0.8}>
             WHO WE ARE
           </Text>
-          <Text fontSize={"5xl"}>Strategic Financiers & Visionary Leaders</Text>
+          <Text fontSize={["4xl", "5xl"]}>
+            Strategic Financiers & Visionary Leaders
+          </Text>
         </Center>
       </Box>
-      <Center mt="20" px="32" mb="32" flexDir={"column"}>
-        <Text fontSize={"2xl"} textAlign={"left"} color={darkPrimeColor}>
+      <Center mt={["10", "20"]} px={["5", "32"]} mb="32" flexDir={"column"}>
+        <Text
+          fontSize={["xl", "2xl"]}
+          textAlign={"left"}
+          color={darkPrimeColor}
+        >
           Driven by a cohort of ambitious Swinburne University students,
           specializing in finance and business, we provide expert analysis and
           collaborative strategies, shaping the future of financial innovation.
         </Text>
-        <Flex gap="10" mt="10">
+        <Flex flexDir={["column", "row"]} gap="10" mt="10">
           {[
             "Empowered by the intellectual rigor of Swinburne University's finance and business programs, our collective is driven to transcend conventional financial paradigms. We synthesize cutting-edge academic theory with pragmatic market insights, delivering expert analysis and strategic frameworks that enable our partners to navigate the complexities of modern financial landscapes.",
             `Central to our ethos is the cultivation of visionary leadership,
@@ -57,7 +63,7 @@ const AboutUs = () => {
           mt="12"
           fontSize={"2xl"}
           w="full"
-          textAlign={"left"}
+          textAlign={["center", "left"]}
           color={darkPrimeColor}
         >
           OUR TEAM
@@ -72,10 +78,18 @@ const AboutUs = () => {
               description:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi eius laborum earum harum suscipit. Modi natus eveniet sed alias earum?",
             },
+            {
+              img: "logo.jpg",
+              name: "Farhan Ehmud",
+              title: "President",
+              description:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi eius laborum earum harum suscipit. Modi natus eveniet sed alias earum?",
+            },
           ].map(({ img, name, description, title }) => (
             <Flex
               mt="5"
-              w="35vh"
+              alignItems={"center"}
+              w={["25vh", "35vh"]}
               key={Math.random()}
               overflow={"clip"}
               flexDir={"column"}
@@ -85,7 +99,7 @@ const AboutUs = () => {
                 variant={"solid"}
                 size={"full"}
                 w="max-content"
-                h="30vh"
+                h={["25vh", "30vh"]}
                 key={12}
               >
                 <Avatar.Fallback>lala land</Avatar.Fallback>
@@ -98,7 +112,7 @@ const AboutUs = () => {
                 {title}
               </Text>
 
-              <Text w="35vh" mt="2">
+              <Text w="35vh" textAlign={"center"} mt="2">
                 {description}
               </Text>
             </Flex>

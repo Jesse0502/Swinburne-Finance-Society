@@ -106,10 +106,10 @@ export default function Events() {
   };
 
   return (
-    <Box py="16" bg="gray.200" w="full" px="16" position="relative">
+    <Box py="16" bg="gray.200" w="full" px={["4", "16"]} position="relative">
       <Flex alignItems={"center"}>
         <Text
-          fontSize="2xl"
+          fontSize={["lg", "2xl"]}
           fontWeight="light"
           fontFamily={"mono-serif"}
           opacity={0.6}
@@ -123,7 +123,7 @@ export default function Events() {
         pb="12"
         fontWeight={"bolder"}
         // font="message-box"
-        fontSize="5xl"
+        fontSize={["4xl", "5xl"]}
       >
         Our Past Events
       </Heading>
@@ -187,12 +187,12 @@ export default function Events() {
             }}
             flexShrink={0}
             // transform={`scale(${getScale(idx)})`}
-            w={"380px"}
+            w={["280px", "380px"]}
             // opacity={getOpacity(idx)}
             // transition="transform 0.3s ease-in-out, opacity 0.3s ease-in-out"
           >
             <Image
-              h={"320px"}
+              h={["280px", "320px"]}
               //   h={activeTab === idx ? "320px" : "280px"}
               w="inherit"
               src={i.img}

@@ -18,6 +18,7 @@ import {
   Button,
   Link,
   Heading,
+  AspectRatio,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -56,8 +57,9 @@ export default function Home() {
           <Flex
             flexDir={"column"}
             pos="absolute"
-            pr={"10vh"}
+            pr={["5vh", "10vh"]}
             mt="-36"
+            // display={["none", "flex"]}
             alignItems={"end"}
             top="44"
             overflow={"clip"}
@@ -71,7 +73,7 @@ export default function Home() {
                 href={link}
                 // @ts-ignore
                 _target={"_blank"}
-                zIndex={9999}
+                zIndex={999}
                 position="relative"
                 key={label}
                 overflow="hidden"
@@ -111,12 +113,12 @@ export default function Home() {
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
-                    padding="10px"
+                    padding={"10px"}
                     color={darkPrimeColor}
                     textDecoration="none"
                     fontWeight="bold"
                     fontSize="sm"
-                    height="40px"
+                    height={"40px"}
                     textAlign={"left"}
                     // @ts-ignore
                     variants={{
@@ -131,7 +133,7 @@ export default function Home() {
                     as={motion.img}
                     src={src}
                     borderRadius={"full"}
-                    boxSize="40px"
+                    boxSize={"40px"}
                     zIndex="2"
                     transitionDelay={"0.3"}
                   />
@@ -143,23 +145,38 @@ export default function Home() {
           <Flex
             position="relative"
             width="100%"
-            height="85vh"
+            height={["max", "85vh"]}
+            flexDir={["column", "row"]}
             overflow="hidden"
           >
-            <video
-              src="./bg-vid.mp4"
-              autoPlay
-              loop
-              muted
-              style={{
-                position: "absolute",
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
-            />
+            <Box display={["none", "block"]} w={"full"}>
+              <video
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+                src="./bg-vid.mp4"
+                autoPlay
+                loop
+                muted
+              />
+            </Box>
+            <Box display={["block", "none"]} w="full">
+              <video
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  height: "50%",
+                  objectFit: "cover",
+                }}
+                src="./bg-vid.mp4"
+                muted
+              />
+            </Box>
             <Flex
-              position="absolute"
+              position={["relative", "absolute"]}
               top="0"
               left="0"
               width="100%"
@@ -167,13 +184,26 @@ export default function Home() {
               flexDir="column"
               alignItems="start"
               color="white"
-              pl="10"
-              pt="8%"
+              pl={["0", "10"]}
+              pt={["0%", "8%"]}
+              bg={["black", "none"]}
             >
-              <Text fontSize="7vh" fontWeight="bold" w="70%" pr="10">
+              <Text
+                fontSize={["4vh", "7vh"]}
+                fontWeight="bold"
+                w={["100%", "70%"]}
+                p={["3", "0"]}
+                pr={["0", "10"]}
+              >
                 Fostering leadership while bridging academic and industry gaps
               </Text>
-              <Text py="5" fontSize={"xl"} w="65%" opacity={"0.8"}>
+              <Text
+                px={["4", ""]}
+                py={["2", "5"]}
+                fontSize={["md", "xl"]}
+                w={["100%", "65%"]}
+                opacity={"0.8"}
+              >
                 Explore the dynamic world of finance with fellow Swinburne
                 students. From market trends and investment strategies to
                 industry insights and career opportunities, connect with experts
@@ -185,7 +215,9 @@ export default function Home() {
                 border={`1px solid ${darkPrimeColor}`}
                 py="7"
                 px="8"
-                mt="6"
+                mt={["3", "6"]}
+                mb={[5, 0]}
+                ml={[3, 0]}
                 rounded="none"
                 color={darkPrimeColor}
                 _hover={{
@@ -203,7 +235,12 @@ export default function Home() {
         </Box>
       </Box>
 
-      <Box bg="white" h="80vh" color={darkPrimeColor} textAlign={"center"}>
+      <Box
+        bg="white"
+        h={["max", "80vh"]}
+        color={darkPrimeColor}
+        textAlign={"center"}
+      >
         <Center flexDir={"column"}>
           <Text textAlign={"center"} w="15vh" h="2px" bg={darkPrimeColor} />
         </Center>
@@ -215,7 +252,14 @@ export default function Home() {
         >
           Our Mission
         </Text>
-        <Center gap="4" px="24" py="10" mt="0" alignItems={"center"}>
+        <Center
+          gap={["7", "4"]}
+          px={["12", "24"]}
+          py="10"
+          mt="0"
+          flexDir={["column", "row"]}
+          alignItems={"center"}
+        >
           {[
             {
               image: "./group-icon.svg",
@@ -245,7 +289,12 @@ export default function Home() {
               key={i.text}
               textAlign={"center"}
             >
-              <Image w="20" h="20" objectFit={"contain"} src={i.image} />
+              <Image
+                w={["10", "20"]}
+                h={["10", "20"]}
+                objectFit={"contain"}
+                src={i.image}
+              />
               <Box>
                 <Text py="2" fontWeight={"bold"} textAlign={"center"}>
                   {i.heading}

@@ -11,17 +11,22 @@ const EventTab = ({ price = 0 }: { price?: Number }) => {
       borderColor={"gray.200"}
       rounded="md"
     >
-      <Flex alignItems="center" gap="5">
+      <Flex flexDir={["column", "row"]} alignItems="center" gap="5">
         <Image
           src="https://media.istockphoto.com/id/1486287149/photo/group-of-multiracial-asian-business-participants-casual-chat-after-successful-conference-event.jpg?s=612x612&w=0&k=20&c=aWW3omXKHjxBkd58NouVo8GsapvA2KXO9RwuokHhvFk="
-          h="50vh"
+          h={["35vh", "50vh"]}
           rounded="md"
         />
-        <Flex h="50vh" alignItems={"center"}>
-          <Box w="400px">
+        <Flex
+          flexDir={["column", "row"]}
+          px={["2", 0]}
+          h={["max", "50vh"]}
+          alignItems={"center"}
+        >
+          <Box w={["", "400px"]}>
             <Badge p="3">Event</Badge>
             <Text
-              fontSize={"4xl"}
+              fontSize={["3xl", "4xl"]}
               textOverflow={"ellipsis"}
               //   h="63px"
               pt="4"
@@ -49,17 +54,23 @@ const EventTab = ({ price = 0 }: { price?: Number }) => {
               dicta enim. Dignissimos explicabo eum ad, rerum dolor eveniet hic
               amet animi minima odit ut at quidem consequatur soluta distinctio? */}
             </Text>
-            <Flex mt="10" justify={"space-between"} w="90%">
-              <Text opacity="0.8">Location</Text>
+            <Flex mt={["5", "10"]} justify={"space-between"} w="90%">
+              <Text opacity="0.7">Location</Text>
               <Text>AGSE Building</Text>
             </Flex>
             <Flex w="90%" justify={"space-between"}>
-              <Text opacity="0.8">Time</Text>
-              <Text fontSize={"sm"}>Wed, 4th April 2025 at 7pm-8pm</Text>
+              <Text opacity="0.7">Time</Text>
+              <Text fontSize={"xs"}>Wed, 4th April 2025 at 7pm-8pm</Text>
             </Flex>
           </Box>
-          <Flex w="100px" flexDir={"column"} mx="10" alignItems={"center"}>
-            <Button size={"lg"} w="20vh" disabled={!price}>
+          <Flex
+            my={["4", "0"]}
+            w={["full", "100px"]}
+            flexDir={"column"}
+            mx="10"
+            alignItems={"center"}
+          >
+            <Button size={"lg"} w={["full", "20vh"]} disabled={!price}>
               {price ? "Buy a ticket" : "Free"}
             </Button>
             <Link mt="3">See Details</Link>

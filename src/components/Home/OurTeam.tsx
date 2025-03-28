@@ -2,10 +2,17 @@ import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 
 const OurTeam = () => {
   return (
-    <Box pt="24" pb="16" bg="gray.200" w="full" px="16" position="relative">
+    <Box
+      pt="24"
+      pb="16"
+      bg="gray.200"
+      w="full"
+      px={["4", "16"]}
+      position="relative"
+    >
       <Flex alignItems={"center"}>
         <Text
-          fontSize="2xl"
+          fontSize={["xl", "2xl"]}
           fontWeight="light"
           fontFamily={"mono-serif"}
           opacity={0.6}
@@ -19,15 +26,15 @@ const OurTeam = () => {
         pb="12"
         fontWeight={"bolder"}
         // font="message-box"
-        fontSize="5xl"
+        fontSize={["4xl", "5xl"]}
       >
         Committee Members
       </Heading>
-      <Flex>
+      <Flex flexDir={["column", "row"]}>
         {[{ title: "President", name: "Farhan Ehmud", img: "logo.jpg" }].map(
           ({ title, name, img }, idx) => (
             <Box bg="white" key={idx + name}>
-              <Image h="350px" w="300px" src={img} />
+              <Image h={"350px"} w={["full", "300px"]} src={img} />
               <Box py="3" px="2">
                 <Text color="gray">{title}</Text>
                 <Text fontSize={"2xl"}>{name}</Text>
