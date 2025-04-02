@@ -1,3 +1,4 @@
+import { AllEvents, EventInterface } from "@/helpers/constants";
 import {
   Box,
   Button,
@@ -140,7 +141,7 @@ export default function Events() {
       </style>
       {/* <Flex justifyContent="center" gap={4} marginBottom={4}></Flex> */}
       <Flex
-        alignItems={"center"}
+        alignItems={"start"}
         w="full"
         gap="5"
         overflowX="auto"
@@ -179,43 +180,58 @@ export default function Events() {
             </Button>
           </>
         )} */}
-        {eventTabs.map((i, idx) => (
-          <Box
-            key={i.title + Math.random()}
-            onClick={() => {
-              setActiveTab(idx);
-            }}
-            flexShrink={0}
-            // transform={`scale(${getScale(idx)})`}
-            w={["280px", "380px"]}
-            // opacity={getOpacity(idx)}
-            // transition="transform 0.3s ease-in-out, opacity 0.3s ease-in-out"
-          >
-            <Image
-              h={["280px", "320px"]}
-              //   h={activeTab === idx ? "320px" : "280px"}
-              w="inherit"
-              src={i.img}
-              objectFit="cover"
-            />
-            <Box p="6" bg="white">
-              <Heading fontSize="2xl">{i.title}</Heading>
-              <Text pt="5" opacity="0.8">
-                {i.description}
-              </Text>
-              <Link href="./pitin">
-                <Image
-                  mt="3"
-                  width="12"
-                  height="10"
-                  src="https://img.icons8.com/ios/100/right--v1.png"
-                  alt="right--v1"
-                />
-              </Link>
-            </Box>
-          </Box>
+        {AllEvents.map((i, idx) => (
+          <Event i={i} key={i.title + i.link} />
+          
         ))}
       </Flex>
     </Box>
   );
 }
+
+const Event = ({ i }: { i: EventInterface }) => {
+  const [showMore, setShowMore] = useState(false);
+  return (
+    <Box
+      // key={i.link + Math.random()}
+      // onClick={() => {
+      //   setActiveTab(idx);
+      // }}
+      flexShrink={0}
+      // transform={`scale(${getScale(idx)})`}
+      w={["280px", "350px"]}
+      // opacity={getOpacity(idx)}
+      // transition="transform 0.3s ease-in-out, opacity 0.3s ease-in-out"
+    >
+      <Image
+        h={["280px", "320px"]}
+        //   h={activeTab === idx ? "320px" : "280px"}
+        w="inherit"
+        src={i.image}
+        objectFit="cover"
+      />
+      <Box p="6" bg="white">
+        <Heading fontSize="2xl">{i.title}</Heading>
+        <Text lineClamp={showMore ? Infinity : 3} pt="5" opacity="0.8">
+          {i.description}
+        </Text>
+        <Text
+          textDecor={"underline"}
+          _hover={{ cursor: "pointer" }}
+          onClick={() => setShowMore(!showMore)}
+        >
+          Read {showMore ? "Less" : "More"}
+        </Text>
+        <Link href={i.link}>
+          <Image
+            mt="3"
+            width="12"
+            height="10"
+            src="https://img.icons8.com/ios/100/right--v1.png"
+            alt="right--v1"
+          />
+        </Link>
+      </Box>
+    </Box>
+  );
+};

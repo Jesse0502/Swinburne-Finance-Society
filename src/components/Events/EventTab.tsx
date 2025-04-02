@@ -1,6 +1,7 @@
+import { EventInterface } from "@/helpers/constants";
 import { Badge, Box, Button, Flex, Image, Link, Text } from "@chakra-ui/react";
-
-const EventTab = ({ price = 0 }: { price?: Number }) => {
+import { formatEventDate } from "@/helpers/helpingFunctions";
+const EventTab = ({ i }: { i?: EventInterface }) => {
   return (
     <Box
       w="full"
@@ -13,7 +14,9 @@ const EventTab = ({ price = 0 }: { price?: Number }) => {
     >
       <Flex flexDir={["column", "row"]} alignItems="center" gap="5">
         <Image
-          src="https://media.istockphoto.com/id/1486287149/photo/group-of-multiracial-asian-business-participants-casual-chat-after-successful-conference-event.jpg?s=612x612&w=0&k=20&c=aWW3omXKHjxBkd58NouVo8GsapvA2KXO9RwuokHhvFk="
+          objectFit={"contain"}
+          src={i?.image}
+          w="70vh"
           h={["35vh", "50vh"]}
           rounded="md"
         />
@@ -24,17 +27,17 @@ const EventTab = ({ price = 0 }: { price?: Number }) => {
           alignItems={"center"}
         >
           <Box w={["", "400px"]}>
-            <Badge p="3">Event</Badge>
+            <Badge p="3">{i?.type}</Badge>
             <Text
               fontSize={["3xl", "4xl"]}
               textOverflow={"ellipsis"}
               //   h="63px"
               pt="4"
               w="inherit"
-              lineClamp={2} // Chakra UI's prop for multi-line ellipsis
+              lineClamp={1} // Chakra UI's prop for multi-line ellipsis
               overflow={"clip"}
             >
-              Networking night
+              {i?.title}
             </Text>
             <Text
               lineClamp={3} // Chakra UI's prop for multi-line ellipsis
@@ -46,21 +49,18 @@ const EventTab = ({ price = 0 }: { price?: Number }) => {
               w="inherit"
               opacity="0.7"
             >
-              A networking night to discuss about nepotism, sexual fantasies and
-              how to get adopted by an investment banker etc
-              {/* Lorem ipsum dolor
-              sit amet consectetur adipisicing elit. Suscipit, voluptatum nam
-              blanditiis ab quaerat eaque accusamus odit aliquam recusandae sunt
-              dicta enim. Dignissimos explicabo eum ad, rerum dolor eveniet hic
-              amet animi minima odit ut at quidem consequatur soluta distinctio? */}
+              {i?.description}
             </Text>
             <Flex mt={["5", "10"]} justify={"space-between"} w="90%">
               <Text opacity="0.7">Location</Text>
-              <Text>AGSE Building</Text>
+              <Text>{i?.location}</Text>
             </Flex>
             <Flex w="90%" justify={"space-between"}>
               <Text opacity="0.7">Time</Text>
-              <Text fontSize={"xs"}>Wed, 4th April 2025 at 7pm-8pm</Text>
+              <Text fontSize={"xs"}>
+                {/* @ts-ignore */}
+                {formatEventDate(new Date(i?.dateTime))}
+              </Text>
             </Flex>
           </Box>
           <Flex
@@ -70,10 +70,12 @@ const EventTab = ({ price = 0 }: { price?: Number }) => {
             mx="10"
             alignItems={"center"}
           >
-            <Button size={"lg"} w={["full", "20vh"]} disabled={!price}>
-              {price ? "Buy a ticket" : "Free"}
+            <Button size={"lg"} w={["full", "20vh"]} disabled={!i?.ticketLink}>
+              {i?.ticketLink ? "Buy a ticket" : "Free"}
             </Button>
-            <Link mt="3">See Details</Link>
+            <Link mt="3" href={i?.link}>
+              See Details
+            </Link>
           </Flex>
         </Flex>
       </Flex>
