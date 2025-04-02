@@ -44,7 +44,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   const pageRoutes = [
-    { name: "Our Goal", link: "/our-goal" },
+    { name: "Alumni", link: "/alumni" },
     { name: "Events", link: "/our-events" },
     { name: "Contact", link: "/contact-us" },
     { name: "About Us", link: "/about-us" },

@@ -1,7 +1,11 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { darkPrimeColor } from "@/helpers/constants";
+import {
+  CommitteeMember,
+  committeeMembers,
+  darkPrimeColor,
+} from "@/helpers/constants";
 import {
   Avatar,
   Box,
@@ -11,12 +15,16 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
+import { useState } from "react";
 
 const AboutUs = () => {
+  const allYears = Object.keys(committeeMembers).map(Number);
+  const latestYear = Math.max(...allYears);
+  const latestMembers = committeeMembers[latestYear];
   return (
     <Box>
       <Navbar />
-      <Box bg={"black"} pos="relative" h={["320px", "450px"]} w="full">
+      <Box bg={"black"} pos="relative" h={["320px", "420px"]} w="full">
         <Image src="Swinburne-Library.jpg" opacity={0.3} h="inherit" w="full" />
         <Center
           flexDir={"column"}
@@ -54,7 +62,7 @@ const AboutUs = () => {
             market shifts and leveraging emerging technologies to drive
             transformative outcomes.`,
           ].map((i) => (
-            <Text flex="1" fontSize={"sm"} opacity="0.8">
+            <Text key={i} flex="1" fontSize={"sm"} opacity="0.8">
               {i}
             </Text>
           ))}
@@ -70,57 +78,66 @@ const AboutUs = () => {
         </Text>
 
         <Flex justify={"center"} gap="5" flexFlow={"wrap"} w="full" mt="16">
-          {[
-            {
-              img: "logo.jpg",
-              name: "Farhan Ehmud",
-              title: "President",
-              description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi eius laborum earum harum suscipit. Modi natus eveniet sed alias earum?",
-            },
-            {
-              img: "logo.jpg",
-              name: "Farhan Ehmud",
-              title: "President",
-              description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi eius laborum earum harum suscipit. Modi natus eveniet sed alias earum?",
-            },
-          ].map(({ img, name, description, title }) => (
-            <Flex
-              mt="5"
-              alignItems={"center"}
-              w={["25vh", "35vh"]}
-              key={Math.random()}
-              overflow={"clip"}
-              flexDir={"column"}
-              flex="4"
-            >
-              <Avatar.Root
-                variant={"solid"}
-                size={"full"}
-                w="max-content"
-                h={["25vh", "30vh"]}
-                key={12}
-              >
-                <Avatar.Fallback>lala land</Avatar.Fallback>
-                <Avatar.Image src={img} />
-              </Avatar.Root>
-              <Text mt="5" fontSize={"3xl"} color={darkPrimeColor}>
-                {name}
-              </Text>
-              <Text pb="3" opacity="0.6">
-                {title}
-              </Text>
-
-              <Text w="35vh" textAlign={"center"} mt="2">
-                {description}
-              </Text>
-            </Flex>
+          {latestMembers.map((i, idx) => (
+            <AlumniTab i={i} idx={idx} />
           ))}
         </Flex>
       </Center>
       <Footer />
     </Box>
+  );
+};
+
+const AlumniTab = ({ i, idx }: { i: CommitteeMember; idx: number }) => {
+  const [showMore, setShowMore] = useState(false);
+  return (
+    <Flex
+      mt="5"
+      alignItems={"center"}
+      w={["25vh", "35vh"]}
+      key={Math.random()}
+      overflow={"clip"}
+      flexDir={"column"}
+      flex="4"
+    >
+      <Avatar.Root
+        variant={"solid"}
+        size={"full"}
+        w="max-content"
+        h={["25vh", "30vh"]}
+        key={12}
+      >
+        <Avatar.Fallback>{i.name}</Avatar.Fallback>
+        <Avatar.Image src={i.image ?? "logo.jpg"} />
+      </Avatar.Root>
+      <Text mt="5" fontSize={"3xl"} color={darkPrimeColor}>
+        {i.name}
+      </Text>
+      <Text pb="3" opacity="0.6">
+        {i.role}
+      </Text>
+
+      <Text
+        w="35vh"
+        lineClamp={showMore ? Infinity : 4}
+        textAlign={"center"}
+        mt="2"
+      >
+        {i.description}{" "}
+      </Text>
+      <Text
+        onClick={() => {
+          setShowMore(!showMore);
+        }}
+        as="span"
+        opacity={0.7}
+        _hover={{ cursor: "pointer" }}
+        textDecor={"underline"}
+      >
+        {" "}
+        {showMore ? "Show Less" : "Show More"}
+      </Text>
+    </Flex>
   );
 };
 
