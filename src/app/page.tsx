@@ -209,27 +209,33 @@ export default function Home() {
                 industry insights and career opportunities, connect with experts
                 and build your financial future.
               </Text>
-              <Button
-                animation="auto"
-                animationDelay="moderate"
-                border={`1px solid ${darkPrimeColor}`}
-                py="7"
-                px="8"
-                mt={["3", "6"]}
-                mb={[5, 0]}
-                ml={[3, 0]}
-                rounded="none"
-                color={darkPrimeColor}
-                _hover={{
-                  bg: darkPrimeColor,
-                  color: "white",
-                  border: `1px solid ${darkPrimeColor}`,
-                }}
-                bg="white"
-                fontSize="lg"
+              <Link
+                href={
+                  "https://studentlife.swinburne.edu.au/Account/AccountTypeSelection?returnUrl=%2FClubs%2Ffinancesociety%2FGroups"
+                }
               >
-                Join Now
-              </Button>
+                <Button
+                  animation="auto"
+                  animationDelay="moderate"
+                  border={`1px solid ${darkPrimeColor}`}
+                  py="7"
+                  px="8"
+                  mt={["3", "6"]}
+                  mb={[5, 0]}
+                  ml={[3, 0]}
+                  rounded="none"
+                  color={darkPrimeColor}
+                  _hover={{
+                    bg: darkPrimeColor,
+                    color: "white",
+                    border: `1px solid ${darkPrimeColor}`,
+                  }}
+                  bg="white"
+                  fontSize="lg"
+                >
+                  Join Now
+                </Button>
+              </Link>
             </Flex>
           </Flex>
         </Box>

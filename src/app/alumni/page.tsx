@@ -152,7 +152,7 @@ const AlumniTab = ({
           w={["25vh", "40vh"]}
           objectFit={"cover"}
           //   pos="absolute"
-          h="max"
+          h="40vh"
           src={member.image ?? "logo.jpg"}
         />
         <Flex

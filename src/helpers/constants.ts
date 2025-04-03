@@ -44,7 +44,7 @@ Favourite investor - Naval Ravikant`,
     },
     {
       name: "William Keehne",
-      role: "Vice President",
+      role: "Co-President/Treasurer",
       year: 2025,
       description:
         "William is a penultimate year finance and engineering dual degree student, interested in Investment Banking M&A, and Private Equity. He has experience in early stage corporate finance in Singapore, and owns a tutoring business. Outside of work and academics, William is an internationally competitive martial artist, and enjoys travel and skiing.",
@@ -59,6 +59,26 @@ Favourite investor - Naval Ravikant`,
           platform: "Instagram",
           username: "william-keehne",
           link: "https://instagram.com/william-keehne",
+        },
+      ],
+    },
+    {
+      name: "Taylor Pham",
+      role: "Co-President/Secratary",
+      year: 2025,
+      description:
+        "Taylor is a penultimate student pursuing a double degree in Finance and Business Analytics, interested in Equity Research and Sales & Trading. She has experience interning in the Corporate Banking Department at one of the Big 4 Banks in Vietnam. Besides Finance, Taylor enjoys music, cars and electric guitars.",
+      image: "./taylor-pham.jpg",
+      socialMedia: [
+        {
+          platform: "Instagram",
+          link: "https://www.instagram.com/tayl0rphxm?igsh=MXRkNWh4cWozY2RjZA%3D%3D&utm_source=qr",
+          username: "tayl0rphxm",
+        },
+        {
+          platform: "Linkedin",
+          link: "https://www.linkedin.com/in/taylor-pham-80010b26b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+          username: "Linkedin",
         },
       ],
     },
@@ -83,12 +103,42 @@ Favourite investor - Naval Ravikant`,
       ],
     },
     {
-      name: "Aman Rattan",
+      name: "Amandeep Kaur",
       role: "Marketing Lead",
       year: 2025,
-      description: "",
-      image: null,
-      socialMedia: [],
+      description: `Aman, the Marketing Director of Swinburne Finance Club, is a passionate networker who loves exploring new opportunities and connecting with people. Currently studying Business Analytics with a minor in Space Technology and FinTech, she brings analytical thinking and creativity to finance. As a Finalist at the International Business Institution, IMT Business School, Dubai, and a former School Council Member, she gained valuable leadership insights. With experience in sales, event coordination, and content creation, she plays a key role in expanding the club’s reach. A true asset to the club, Aman’s strategic marketing skills drive engagement in our club. A plant lover and avid reader, her current favorite book is The Immortals of Meluha.`,
+      image: "./amandeep-kaur.jpg",
+      socialMedia: [
+        {
+          platform: "Instagram",
+          username: "Okayyyyaman",
+          link: "https://instagram.com/Okayyyyaman",
+        },
+        {
+          platform: "Linkedin",
+          username: "Linkedin",
+          link: "https://www.linkedin.com/in/amandeep-kaur-gurmeet-singh-109434284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        },
+      ],
+    },
+    {
+      name: "Aditya Jain",
+      role: "Marketing Lead",
+      year: 2025,
+      description: ``,
+      image: "",
+      socialMedia: [
+        {
+          platform: "Instagram",
+          username: "Okayyyyaman",
+          link: "https://instagram.com/Okayyyyaman",
+        },
+        {
+          platform: "Linkedin",
+          username: "Linkedin",
+          link: "https://www.linkedin.com/in/amandeep-kaur-gurmeet-singh-109434284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        },
+      ],
     },
   ],
   2024: [

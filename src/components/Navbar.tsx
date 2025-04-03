@@ -145,21 +145,27 @@ const Navbar = () => {
 
 const BecomeAMemberBtn = () => {
   return (
-    <Button
-      border="1px solid white"
-      py="7"
-      rounded="none"
-      color="white"
-      bg={darkPrimeColor}
-      _hover={{
-        bg: "white",
-        color: darkPrimeColor,
-        border: `1px solid ${darkPrimeColor}`,
-      }}
-      fontSize="lg"
+    <Link
+      href={
+        "https://studentlife.swinburne.edu.au/Account/AccountTypeSelection?returnUrl=%2FClubs%2Ffinancesociety%2FGroups"
+      }
     >
-      Become a Member
-    </Button>
+      <Button
+        border="1px solid white"
+        py="7"
+        rounded="none"
+        color="white"
+        bg={darkPrimeColor}
+        _hover={{
+          bg: "white",
+          color: darkPrimeColor,
+          border: `1px solid ${darkPrimeColor}`,
+        }}
+        fontSize="lg"
+      >
+        Become a Member
+      </Button>
+    </Link>
   );
 };
 
