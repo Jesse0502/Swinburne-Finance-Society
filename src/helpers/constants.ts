@@ -23,7 +23,11 @@ export const committeeMembers: { [year: number]: CommitteeMember[] } = {
       name: "Farhan Ehmud",
       role: "President",
       year: 2025,
-      description: "",
+      description: `Farhan is a penultimate-year Business student pursuing a double major in Analytics and Finance. He is passionate about leveraging analytics in finance, particularly for risk analysis in equity markets. His career aspirations lie in Portfolio Optimization and Quantitative Finance. Currently, he is helping develop a machine learning model at a startup called Weekly. He enjoys Calisthenics, Formula 1 and is an experienced guitarist.
+
+Favourite firm - SIG and Goldman Sachs
+
+Favourite investor - Naval Ravikant`,
       image: null,
       socialMedia: [
         {
@@ -63,7 +67,7 @@ export const committeeMembers: { [year: number]: CommitteeMember[] } = {
       role: "Web Developer",
       year: 2025,
       description:
-        "Jasmeet Singh is a Master of IT student with a strong foundation in software development and a passion for technology. With a successful freelancing career working with over 20 international clients. His interests extend to cloud computing and emerging technologies. Outside of tech, Jasmeet enjoys making music as a creative outlet and loves bike riding.",
+        "Jasmeet is a Masters student specializing in Cloud Engineering & Software development. With a successful freelancing career working with over 20 international clients. His interests extend to cloud computing and emerging technologies. Outside of tech, Jasmeet enjoys making music as a creative outlet and loves bike riding.",
       image: "./jasmeet-singh.jpg",
       socialMedia: [
         {
