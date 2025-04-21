@@ -67,8 +67,14 @@ const Alumni = () => {
           <Text fontSize={["4xl", "5xl"]}>Alumni</Text>
         </Center>
       </Box>
-      <Flex px="32" mt="14" justify={"space-between"} alignItems={"center"}>
-        <Box w="320px">
+      <Flex
+        flexDir={["column-reverse", "row"]}
+        px={["4", "32"]}
+        mt="14"
+        justify={"space-between"}
+        alignItems={["start", "center"]}
+      >
+        <Box w={["160px", "200px"]} mt={[10, 0]} mb={[-10, 0]}>
           <Select
             variant={"subtle"}
             options={allYears.map((year) => ({
@@ -82,10 +88,10 @@ const Alumni = () => {
             isDisabled={!!searchQuery.trim()} // Disable year select when searching
           />
         </Box>
-        <Flex gap="2">
+        <Flex gap="2" w={["full", "48vh"]}>
           <Input
             size="lg"
-            w="32vh"
+            w={["full", "32vh"]}
             type="text"
             variant={"flushed"}
             placeholder={"Search Members"}
@@ -140,8 +146,8 @@ const AlumniTab = ({
       alignItems={"center"}
       flexShrink={0}
       pb="5"
-      w={["25vh", "40vh"]}
-      minW={["25vh", "40vh"]}
+      w={["full", "40vh"]}
+      minW={["full", "40vh"]}
       key={member.name + member.year + member.year}
       overflow={"hidden"}
       flexDir={"column"}
@@ -149,10 +155,10 @@ const AlumniTab = ({
     >
       <Box pos="relative">
         <Image
-          w={["25vh", "40vh"]}
+          w={["full", "40vh"]}
           objectFit={"cover"}
           //   pos="absolute"
-          h="40vh"
+          h={["full", "40vh"]}
           src={member.image ?? "logo.jpg"}
         />
         <Flex
@@ -251,9 +257,8 @@ const AlumniTab = ({
         lineClamp={showMore ? Infinity : 4}
         textAlign={"center"}
         mt="2"
-      >
-        {member.description}{" "}
-      </Text>
+        dangerouslySetInnerHTML={{ __html: `${member.description}` }}
+      ></Text>
       <Text
         onClick={() => {
           setShowMore(!showMore);

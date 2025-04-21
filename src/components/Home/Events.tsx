@@ -11,100 +11,7 @@ import {
 import { useState, useRef, useEffect, DOMElement } from "react";
 
 export default function Events() {
-  const [activeTab, setActiveTab] = useState(0);
   const carouselRef = useRef(null);
-  const eventTabs = [
-    {
-      img: "https://media.istockphoto.com/id/1486287149/photo/group-of-multiracial-asian-business-participants-casual-chat-after-successful-conference-event.jpg?s=612x612&w=0&k=20&c=aWW3omXKHjxBkd58NouVo8GsapvA2KXO9RwuokHhvFk=",
-      title: "Networking Night",
-      description:
-        "A networking night to discuss about nepotism, sexual fantasies and how to get adopted by an investment banker etc",
-    },
-    {
-      img: "https://media.istockphoto.com/id/1486287149/photo/group-of-multiracial-asian-business-participants-casual-chat-after-successful-conference-event.jpg?s=612x612&w=0&k=20&c=aWW3omXKHjxBkd58NouVo8GsapvA2KXO9RwuokHhvFk=",
-      title: "Networking Night",
-      description:
-        "A networking night to discuss about nepotism, sexual fantasies and how to get adopted by an investment banker etc",
-    },
-    {
-      img: "https://media.istockphoto.com/id/1486287149/photo/group-of-multiracial-asian-business-participants-casual-chat-after-successful-conference-event.jpg?s=612x612&w=0&k=20&c=aWW3omXKHjxBkd58NouVo8GsapvA2KXO9RwuokHhvFk=",
-      title: "Networking Night",
-      description:
-        "A networking night to discuss about nepotism, sexual fantasies and how to get adopted by an investment banker etc",
-    },
-    {
-      img: "https://media.istockphoto.com/id/1486287149/photo/group-of-multiracial-asian-business-participants-casual-chat-after-successful-conference-event.jpg?s=612x612&w=0&k=20&c=aWW3omXKHjxBkd58NouVo8GsapvA2KXO9RwuokHhvFk=",
-      title: "Networking Night",
-      description:
-        "A networking night to discuss about nepotism, sexual fantasies and how to get adopted by an investment banker etc",
-    },
-    {
-      img: "https://media.istockphoto.com/id/1486287149/photo/group-of-multiracial-asian-business-participants-casual-chat-after-successful-conference-event.jpg?s=612x612&w=0&k=20&c=aWW3omXKHjxBkd58NouVo8GsapvA2KXO9RwuokHhvFk=",
-      title: "Networking Night",
-      description:
-        "A networking night to discuss about nepotism, sexual fantasies and how to get adopted by an investment banker etc",
-    },
-  ];
-
-  const handleForward = () => {
-    setActiveTab((prevTab) => {
-      const newTab = (prevTab + 1) % eventTabs.length;
-      return newTab;
-    });
-    if (carouselRef.current) {
-      // @ts-ignore
-      carouselRef.current.scrollTo({
-        left: 380,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const handleBackward = () => {
-    setActiveTab((prevTab) => {
-      const newTab = (prevTab - 1 + eventTabs.length) % eventTabs.length;
-      return newTab;
-    });
-  };
-  // @ts-ignore
-  const getOpacity = (index) => {
-    const distance = Math.abs(index - activeTab);
-    if (distance === 0) return 1;
-    if (distance === 1) return 0.7;
-    if (distance === 2) return 0.4;
-    return 0.2;
-  };
-
-  // @ts-ignore
-  const getScale = (index) => {
-    const distance = Math.abs(index - activeTab);
-    if (distance === 0) return 1;
-    if (distance === 1) return 0.95;
-    if (distance === 2) return 0.9;
-    return 0.85;
-  };
-  // @ts-ignore
-  const scrollToTab = (index) => {
-    if (carouselRef.current) {
-      // @ts-ignore
-      const tabElement = carouselRef.current.children[index];
-      if (tabElement) {
-        const tabRect = tabElement.getBoundingClientRect();
-        // @ts-ignore
-        const carouselRect = carouselRef.current.getBoundingClientRect();
-        const scrollLeft = Math.round(
-          tabRect.left -
-            carouselRect.left -
-            (carouselRect.width - tabRect.width) / 2
-        );
-        // @ts-ignore
-        carouselRef.current.scrollTo({
-          left: scrollLeft,
-          behavior: "smooth",
-        });
-      }
-    }
-  };
 
   return (
     <Box py="16" bg="gray.200" w="full" px={["4", "16"]} position="relative">
@@ -182,7 +89,6 @@ export default function Events() {
         )} */}
         {AllEvents.map((i, idx) => (
           <Event i={i} key={i.title + i.link} />
-          
         ))}
       </Flex>
     </Box>

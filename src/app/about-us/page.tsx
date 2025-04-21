@@ -122,8 +122,9 @@ const AlumniTab = ({ i, idx }: { i: CommitteeMember; idx: number }) => {
         lineClamp={showMore ? Infinity : 4}
         textAlign={"center"}
         mt="2"
+        dangerouslySetInnerHTML={{ __html: `${i.description}` }}
       >
-        {i.description}{" "}
+        {/* {i.description}{" "} */}
       </Text>
       <Text
         onClick={() => {

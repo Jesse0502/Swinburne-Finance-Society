@@ -2,6 +2,7 @@
 import BackgroundSlider from "@/components/BackgroundSlider";
 import Footer from "@/components/Footer";
 import Events from "@/components/Home/Events";
+import LaunchCountdown from "@/components/Home/Intro";
 import OurTeam from "@/components/Home/OurTeam";
 import Resources from "@/components/Home/Resources";
 import Navbar from "@/components/Navbar";
@@ -36,7 +37,19 @@ export default function Home() {
     },
     { src: "./discord.png", label: "Discord", link: "" },
   ];
-  return (
+  const [showFullWebsite, setShowFullWebsite] = useState(false);
+
+  const handleCountdownComplete = () => {
+    // Optional: Add any additional reveals or effects here
+    setShowFullWebsite(true);
+  };
+  return !showFullWebsite ? (
+    <LaunchCountdown
+      // @ts-ignore
+      onComplete={handleCountdownComplete}
+      startCountdown={false}
+    />
+  ) : (
     <Center
       flexDir={"column"}
       // fontFamily={"mono-serif"}

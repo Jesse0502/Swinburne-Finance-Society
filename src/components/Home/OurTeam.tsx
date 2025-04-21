@@ -74,7 +74,12 @@ const OurTeam = () => {
           </Box>
         ))} */}
         {latestMembers.map((member, idx) => (
-          <Box flexShrink={0} bg="white" w={"300px"} key={idx + member.name}>
+          <Box
+            flexShrink={0}
+            bg="white"
+            w={["full", "300px"]}
+            key={idx + member.name}
+          >
             <Image
               h={"350px"}
               w={["full", "300px"]}

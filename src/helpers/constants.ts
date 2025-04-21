@@ -21,14 +21,14 @@ export const committeeMembers: { [year: number]: CommitteeMember[] } = {
   2025: [
     {
       name: "Farhan Ehmud",
-      role: "President",
+      role: "Co-President",
       year: 2025,
       description: `Farhan is a penultimate-year Business student pursuing a double major in Analytics and Finance. He is passionate about leveraging analytics in finance, particularly for risk analysis in equity markets. His career aspirations lie in Portfolio Optimization and Quantitative Finance. Currently, he is helping develop a machine learning model at a startup called Weekly. He enjoys Calisthenics, Formula 1 and is an experienced guitarist.
-
-Favourite firm - SIG and Goldman Sachs
-
-Favourite investor - Naval Ravikant`,
-      image: null,
+      <br/>
+      <b>Favourite firm</b> - SIG and Goldman Sachs
+      <br/>
+      <b>Favourite investor</b> - Naval Ravikant`,
+      image: "./farhan-ehmud.jpg",
       socialMedia: [
         {
           platform: "LinkedIn",
@@ -48,7 +48,7 @@ Favourite investor - Naval Ravikant`,
       year: 2025,
       description:
         "William is a penultimate year finance and engineering dual degree student, interested in Investment Banking M&A, and Private Equity. He has experience in early stage corporate finance in Singapore, and owns a tutoring business. Outside of work and academics, William is an internationally competitive martial artist, and enjoys travel and skiing.",
-      image: null,
+      image: "./William_keehne.jpg",
       socialMedia: [
         {
           platform: "LinkedIn",
@@ -93,7 +93,7 @@ Favourite investor - Naval Ravikant`,
         {
           platform: "LinkedIn",
           username: "jasmeet-singh-0502",
-          link: "https://linkedin.com/in/jasmeet-singh-0502",
+          link: "https://www.linkedin.com/in/jasmeet-singh-3b5b91185",
         },
         {
           platform: "Instagram",
@@ -104,7 +104,7 @@ Favourite investor - Naval Ravikant`,
     },
     {
       name: "Amandeep Kaur",
-      role: "Marketing Lead",
+      role: "Marketing Director",
       year: 2025,
       description: `Aman, the Marketing Director of Swinburne Finance Club, is a passionate networker who loves exploring new opportunities and connecting with people. Currently studying Business Analytics with a minor in Space Technology and FinTech, she brings analytical thinking and creativity to finance. As a Finalist at the International Business Institution, IMT Business School, Dubai, and a former School Council Member, she gained valuable leadership insights. With experience in sales, event coordination, and content creation, she plays a key role in expanding the club’s reach. A true asset to the club, Aman’s strategic marketing skills drive engagement in our club. A plant lover and avid reader, her current favorite book is The Immortals of Meluha.`,
       image: "./amandeep-kaur.jpg",
@@ -123,10 +123,10 @@ Favourite investor - Naval Ravikant`,
     },
     {
       name: "Aditya Jain",
-      role: "Marketing Lead",
+      role: "Events Lead",
       year: 2025,
       description: ``,
-      image: "",
+      image: "Aditya_Jain.png",
       socialMedia: [
         {
           platform: "Instagram",
