@@ -37,7 +37,7 @@ export default function Home() {
     },
     { src: "./discord.png", label: "Discord", link: "" },
   ];
-  const [showFullWebsite, setShowFullWebsite] = useState(false);
+  const [showFullWebsite, setShowFullWebsite] = useState(true);
 
   const handleCountdownComplete = () => {
     // Optional: Add any additional reveals or effects here
