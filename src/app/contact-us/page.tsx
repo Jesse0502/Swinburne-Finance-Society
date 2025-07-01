@@ -1,4 +1,5 @@
 "use client";
+
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import {
@@ -13,20 +14,62 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import { toaster, Toaster } from "@/components/ui/toaster";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useForm } from "@formspree/react";
 
 const ContactUs = () => {
+  const [state, handleSubmit] = useForm(
+    process.env.NEXT_PUBLIC_FORM || "myForm"
+  );
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     message: "",
   });
+
   const [errors, setErrors] = useState({
     fullName: "",
     email: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Handle successful submission
+  useEffect(() => {
+    if (state.succeeded) {
+      toaster.create({
+        title: "Success!",
+        description: "Your message has been sent successfully",
+        type: "success",
+      });
+
+      // Reset form
+      setFormData({
+        fullName: "",
+        email: "",
+        message: "",
+      });
+
+      // Clear any existing errors
+      setErrors({
+        fullName: "",
+        email: "",
+        message: "",
+      });
+    }
+  }, [state.succeeded]);
+
+  // Handle form errors from Formspree
+  useEffect(() => {
+    // @ts-ignore
+    if (state.errors && state.errors.length > 0) {
+      toaster.create({
+        title: "Error!",
+        description: "Failed to send message. Please try again.",
+        type: "error",
+      });
+    }
+  }, [state.errors]);
 
   const validateForm = () => {
     let valid = true;
@@ -76,8 +119,8 @@ const ContactUs = () => {
       [name]: value,
     }));
 
-    // @ts-ignore
-    if (errors[name]) {
+    // Clear error when user starts typing
+    if (errors[name as keyof typeof errors]) {
       setErrors((prev) => ({
         ...prev,
         [name]: "",
@@ -85,42 +128,22 @@ const ContactUs = () => {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Validate form before submitting
     if (!validateForm()) {
       return;
     }
 
-    setIsSubmitting(true);
+    // Create FormData object for Formspree
+    const formDataToSubmit = new FormData();
+    formDataToSubmit.append("fullName", formData.fullName);
+    formDataToSubmit.append("email", formData.email);
+    formDataToSubmit.append("message", formData.message);
 
-    try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      // Show success message
-      toaster.create({
-        title: "Success!",
-        description: "Your message has been sent successfully",
-        type: "success",
-      });
-
-      // Reset form
-      setFormData({
-        fullName: "",
-        email: "",
-        message: "",
-      });
-    } catch (error) {
-      console.error("Form submission error:", error); // Debugging
-      toaster.create({
-        title: "Error!",
-        description: "Failed to send message. Please try again.",
-        type: "error",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Submit using Formspree's handleSubmit
+    await handleSubmit(formDataToSubmit);
   };
 
   return (
@@ -133,13 +156,7 @@ const ContactUs = () => {
         mt="5"
         justifyContent={"space-between"}
       >
-        <Image
-          flex="1"
-          src="swin-hero-2.jpg"
-          //   src="pexels-wildlittlethingsphoto-1015568.jpg"
-          h={"70vh"}
-          w={["full", "20vh"]}
-        />
+        <Image flex="1" src="swin-hero-2.jpg" h={"70vh"} w={["full", "20vh"]} />
         <Flex flexDir={"column"} h={"81.7vh"} flex="1">
           <Text
             fontSize={["4xl", "6xl"]}
@@ -168,23 +185,25 @@ const ContactUs = () => {
               h="50vh"
               flexDir={"column"}
             >
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={onSubmit}>
                 <Input
-                  name="fullName" // Correct name attribute
+                  name="fullName"
                   size={"2xl"}
                   placeholder="Full Name"
                   variant="flushed"
                   type="text"
                   value={formData.fullName}
                   onChange={handleChange}
+                  disabled={state.submitting}
                 />
                 {errors.fullName && (
                   <Text color="red.500" fontSize="sm" mt={1}>
                     {errors.fullName}
                   </Text>
                 )}
+
                 <Input
-                  name="email" // Correct name attribute
+                  name="email"
                   type="email"
                   size={"2xl"}
                   my="3"
@@ -192,34 +211,52 @@ const ContactUs = () => {
                   value={formData.email}
                   onChange={handleChange}
                   variant="flushed"
+                  disabled={state.submitting}
                 />
                 {errors.email && (
                   <Text color="red.500" fontSize="sm" mt={1}>
                     {errors.email}
                   </Text>
                 )}
+
                 <Textarea
-                  name="message" // Correct name attribute
+                  name="message"
                   placeholder="Message"
                   _placeholder={{ fontSize: "lg", pt: "2" }}
                   variant="flushed"
                   value={formData.message}
                   onChange={handleChange}
+                  disabled={state.submitting}
                 />
                 {errors.message && (
                   <Text color="red.500" fontSize="sm" mt={1}>
                     {errors.message}
                   </Text>
                 )}
-                <Button disabled={isSubmitting} h="12" type="submit">
-                  Contact Us
+
+                <Button
+                  mt="5"
+                  disabled={state.submitting}
+                  h="12"
+                  type="submit"
+                  // @ts-ignore
+                  loadingText="Sending..."
+                >
+                  {state.submitting ? (
+                    <>
+                      <Spinner size="sm" mr={2} />
+                      Sending...
+                    </>
+                  ) : (
+                    "Contact Us"
+                  )}
                 </Button>
               </form>
             </Flex>
+
             <Flex
               flex="1"
               w="10vh"
-              //   justify={"space-between"}
               h="50vh"
               fontSize={"sm"}
               gap="6"
@@ -229,14 +266,13 @@ const ContactUs = () => {
               <Flex gap="3">
                 <Image h="5" src="email-icon.png" />
                 <Text opacity="0.7" w={["10vh", "max"]} textWrap={"pretty"}>
-                  {" "}
                   swinurnefinance@gmail.com
                 </Text>
               </Flex>
               <Flex gap="3">
                 <Image h="5" src="location-icon.png" />
                 <Text opacity="0.7" w={["10vh", "max"]} textWrap={"pretty"}>
-                  Melbourne, Victoria
+                  Swinburne University: Hawthorn, Victoria
                 </Text>
               </Flex>
             </Flex>
@@ -244,7 +280,6 @@ const ContactUs = () => {
         </Flex>
       </Center>
       <Toaster />
-
       <Footer />
     </Box>
   );

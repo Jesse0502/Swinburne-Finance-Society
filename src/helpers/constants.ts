@@ -48,7 +48,7 @@ export const committeeMembers: { [year: number]: CommitteeMember[] } = {
       year: 2025,
       description:
         "William is a penultimate year finance and engineering dual degree student, interested in Investment Banking M&A, and Private Equity. He has experience in early stage corporate finance in Singapore, and owns a tutoring business. Outside of work and academics, William is an internationally competitive martial artist, and enjoys travel and skiing.",
-      image: "./William_keehne.jpg",
+      image: "./WilliamKeehne.jpg",
       socialMedia: [
         {
           platform: "LinkedIn",
@@ -123,7 +123,7 @@ export const committeeMembers: { [year: number]: CommitteeMember[] } = {
     },
     {
       name: "Aditya Jain",
-      role: "Events Lead",
+      role: "Events Director",
       year: 2025,
       description: ``,
       image: "Aditya_Jain.png",
@@ -137,6 +137,44 @@ export const committeeMembers: { [year: number]: CommitteeMember[] } = {
           platform: "Linkedin",
           username: "Linkedin",
           link: "https://www.linkedin.com/in/amandeep-kaur-gurmeet-singh-109434284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        },
+      ],
+    },
+    {
+      name: "Ana",
+      role: "SFS Capital Director",
+      year: 2025,
+      description: ``,
+      image: "Aditya_Jain.png",
+      socialMedia: [
+        {
+          platform: "Instagram",
+          username: "",
+          link: "",
+        },
+        {
+          platform: "Linkedin",
+          username: "Linkedin",
+          link: "",
+        },
+      ],
+    },
+    {
+      name: "Amrit",
+      role: "Partnerships director",
+      year: 2025,
+      description: ``,
+      image: "Aditya_Jain.png",
+      socialMedia: [
+        {
+          platform: "Instagram",
+          username: "",
+          link: "",
+        },
+        {
+          platform: "Linkedin",
+          username: "Linkedin",
+          link: "",
         },
       ],
     },
@@ -175,12 +213,14 @@ export interface EventInterface {
 export const AllEvents: EventInterface[] = [
   {
     type: "Event",
-    title: "Upcoming Event",
-    description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla illo commodi quisquam ea reiciendis, error, odio rem aliquam animi sint fugit sit quaerat earum esse, eos eligendi officia autem corrupti.`,
-    link: "https://www.instagram.com/p/DG_GeA3vk3q/",
-    image: "./logo.jpg",
-    location: "The Node",
-    dateTime: new Date("2025-05-12T18:00:00"),
+    title: "Networking Night 2025",
+    description: `Step into the world of finance with Swinburne Finance Society’s Networking Night 2025! Meet industry professionals from top firms like KPMG, PwC, CPA Australia, and more.
+
+A night of insights, connections, and career opportunities awaits!!!`,
+    link: "https://www.instagram.com/p/DJQq3mVvTn1/",
+    image: "./events/networking-night-2025.jpg",
+    location: "AMDC, Swinburne",
+    dateTime: new Date("2025-05-15T17:30:00"),
     ticketLink: null,
   },
   {

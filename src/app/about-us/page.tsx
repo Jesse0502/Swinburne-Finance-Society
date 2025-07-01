@@ -49,18 +49,14 @@ const AboutUs = () => {
           textAlign={"left"}
           color={darkPrimeColor}
         >
-          Driven by a cohort of ambitious Swinburne University students,
-          specializing in finance and business, we provide expert analysis and
-          collaborative strategies, shaping the future of financial innovation.
+          Driven by a cohort of ambitious Swinburne finance and business
+          students, we team up to share smart ideas and strategies, all while
+          helping to shape what's next in finance.
         </Text>
         <Flex flexDir={["column", "row"]} gap="10" mt="10">
           {[
-            "Empowered by the intellectual rigor of Swinburne University's finance and business programs, our collective is driven to transcend conventional financial paradigms. We synthesize cutting-edge academic theory with pragmatic market insights, delivering expert analysis and strategic frameworks that enable our partners to navigate the complexities of modern financial landscapes.",
-            `Central to our ethos is the cultivation of visionary leadership,
-            honed through rigorous academic inquiry and practical application.
-            We champion a proactive approach to financial strategy, anticipating
-            market shifts and leveraging emerging technologies to drive
-            transformative outcomes.`,
+            "Fuelled by the awesome finance and business smarts from Swinburne University, our club is all about exploring new ideas beyond just textbooks. We mix what we learn in lectures with real-world insights, sharing cool analyses and strategies to help each other understand how the financial world really works.",
+            `At our core, we're building future leaders who are ready to tackle anything. We do this by digging deep into what we study and getting hands-on experience. We love staying ahead of the curve in financial strategy, spotting new trends, and using emerging tech to make a real impact.`,
           ].map((i) => (
             <Text key={i} flex="1" fontSize={"sm"} opacity="0.8">
               {i}
@@ -103,7 +99,7 @@ const AlumniTab = ({ i, idx }: { i: CommitteeMember; idx: number }) => {
       <Avatar.Root
         variant={"solid"}
         size={"full"}
-        w="max-content"
+        w="30vh"
         h={["25vh", "30vh"]}
         key={12}
       >
