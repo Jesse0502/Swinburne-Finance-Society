@@ -35,7 +35,7 @@ export default function Home() {
       label: "Linkedin",
       link: "https://www.linkedin.com/company/swinburne-finance-club/",
     },
-    { src: "./discord.png", label: "Discord", link: "" },
+    // { src: "./discord.png", label: "Discord", link: "" },
   ];
   const [showFullWebsite, setShowFullWebsite] = useState(true);
 

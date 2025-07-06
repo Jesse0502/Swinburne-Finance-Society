@@ -73,9 +73,16 @@ const AboutUs = () => {
           OUR TEAM
         </Text>
 
-        <Flex justify={"center"} gap="5" flexFlow={"wrap"} w="full" mt="16">
+        <Flex
+          justify={"center"}
+          gap="5"
+          breakInside={"auto"}
+          flexFlow={"wrap"}
+          w="full"
+          mt="16"
+        >
           {latestMembers.map((i, idx) => (
-            <AlumniTab i={i} idx={idx} />
+            <AlumniTab key={`${i.name}-${idx}-${i.role}`} i={i} idx={idx} />
           ))}
         </Flex>
       </Center>
@@ -96,15 +103,9 @@ const AlumniTab = ({ i, idx }: { i: CommitteeMember; idx: number }) => {
       flexDir={"column"}
       flex="4"
     >
-      <Avatar.Root
-        variant={"solid"}
-        size={"full"}
-        w="30vh"
-        h={["25vh", "30vh"]}
-        key={12}
-      >
+      <Avatar.Root variant={"solid"} size={"full"} w="30vh" h={"30vh"} key={12}>
         <Avatar.Fallback>{i.name}</Avatar.Fallback>
-        <Avatar.Image src={i.image ?? "logo.jpg"} />
+        <Avatar.Image src={i?.image || "Portrait_Placeholder.png"} />
       </Avatar.Root>
       <Text mt="5" fontSize={"3xl"} color={darkPrimeColor}>
         {i.name}
@@ -112,28 +113,33 @@ const AlumniTab = ({ i, idx }: { i: CommitteeMember; idx: number }) => {
       <Text pb="3" opacity="0.6">
         {i.role}
       </Text>
-
-      <Text
-        w="35vh"
-        lineClamp={showMore ? Infinity : 4}
-        textAlign={"center"}
-        mt="2"
-        dangerouslySetInnerHTML={{ __html: `${i.description}` }}
-      >
-        {/* {i.description}{" "} */}
-      </Text>
-      <Text
-        onClick={() => {
-          setShowMore(!showMore);
-        }}
-        as="span"
-        opacity={0.7}
-        _hover={{ cursor: "pointer" }}
-        textDecor={"underline"}
-      >
-        {" "}
-        {showMore ? "Show Less" : "Show More"}
-      </Text>
+      {i.description ? (
+        <>
+          <Text
+            w="35vh"
+            lineClamp={showMore ? Infinity : 4}
+            textAlign={"center"}
+            mt="2"
+            dangerouslySetInnerHTML={{ __html: `${i.description}` }}
+          >
+            {/* {i.description}{" "} */}
+          </Text>
+          <Text
+            onClick={() => {
+              setShowMore(!showMore);
+            }}
+            as="span"
+            opacity={0.7}
+            _hover={{ cursor: "pointer" }}
+            textDecor={"underline"}
+          >
+            {" "}
+            {showMore ? "Show Less" : "Show More"}
+          </Text>
+        </>
+      ) : (
+        <></>
+      )}
     </Flex>
   );
 };

@@ -16,8 +16,8 @@ const EventTab = ({ i }: { i?: EventInterface }) => {
         <Image
           objectFit={"contain"}
           src={i?.image}
-          minW="70vh"
-          h={["35vh", "50vh"]}
+          minW={"70vh"}
+          h={"50vh"}
           rounded="md"
         />
         <Flex

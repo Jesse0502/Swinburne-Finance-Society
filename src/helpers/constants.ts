@@ -125,7 +125,7 @@ export const committeeMembers: { [year: number]: CommitteeMember[] } = {
       name: "Aditya Jain",
       role: "Events Director",
       year: 2025,
-      description: ``,
+      description: `Aditya is a third-year Accounting and Finance student at Swinburne University with a strong interest in investment banking and accounting. As Events Director of the Swinburne Finance Society, he is committed to creating engaging events that help students connect with the finance industry. Outside of university, he enjoys playing guitar and watching football.`,
       image: "Aditya_Jain.png",
       socialMedia: [
         {
@@ -141,11 +141,15 @@ export const committeeMembers: { [year: number]: CommitteeMember[] } = {
       ],
     },
     {
-      name: "Ana",
+      name: "Hourt Rachana",
       role: "SFS Capital Director",
       year: 2025,
-      description: ``,
-      image: "Aditya_Jain.png",
+      description: `Third-year Finance student and a member of Swinburne Finance Society. I speak both Khmer, English and currently studying Chinese. 
+
+I have a strong passion for markets, data analysis, investing, and financial technology.
+
+I’m always seeking opportunities to learn, grow, and challenge myself—whether through competitions, internships, volunteers, or projects.`,
+      image: "Hourt_Rachana.jpg",
       socialMedia: [
         {
           platform: "Instagram",
@@ -155,16 +159,16 @@ export const committeeMembers: { [year: number]: CommitteeMember[] } = {
         {
           platform: "Linkedin",
           username: "Linkedin",
-          link: "",
+          link: "https://www.linkedin.com/in/rachana-hourt?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         },
       ],
     },
     {
-      name: "Amrit",
+      name: "Amrit Loyal",
       role: "Partnerships director",
       year: 2025,
       description: ``,
-      image: "Aditya_Jain.png",
+      image: "",
       socialMedia: [
         {
           platform: "Instagram",
@@ -182,17 +186,79 @@ export const committeeMembers: { [year: number]: CommitteeMember[] } = {
   2024: [
     {
       name: "Noah Hefford",
-      role: "President",
+      role: "Founder & President",
       year: 2024,
-      description: "2024 president description...",
-      image: "./noah-hefford.jpg",
+      description: "",
+      image: "./noah_hefford.jpg",
       socialMedia: [
         {
           platform: "LinkedIn",
-          username: "prev-president",
-          link: "https://linkedin.com/in/prev-president",
+          username: "Linkedin",
+          link: "https://www.linkedin.com/in/noah-hefford?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         },
       ],
+    },
+    {
+      name: "Jenna (Arlo) Fehring",
+      role: "Founder & Secretary",
+      year: 2024,
+      description: "",
+      image: "",
+      socialMedia: [],
+    },
+    {
+      name: "Mursal Rezai",
+      role: "Treasurer",
+      year: 2024,
+      description: "",
+      image: "",
+      socialMedia: [],
+    },
+    {
+      name: "Taylor Pham",
+      role: "Events lead",
+      year: 2024,
+      description: "",
+      image: "./taylor-pham.jpg",
+      socialMedia: [
+        {
+          platform: "Instagram",
+          link: "https://www.instagram.com/tayl0rphxm?igsh=MXRkNWh4cWozY2RjZA%3D%3D&utm_source=qr",
+          username: "tayl0rphxm",
+        },
+        {
+          platform: "Linkedin",
+          link: "https://www.linkedin.com/in/taylor-pham-80010b26b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+          username: "Linkedin",
+        },
+      ],
+    },
+    {
+      name: "Farhan Ehmud",
+      role: "General Commitee",
+      year: 2024,
+      description: "",
+      image: "./farhan-ehmud.jpg",
+      socialMedia: [
+        {
+          platform: "LinkedIn",
+          username: "farhan-ehmud",
+          link: "https://linkedin.com/in/farhan-ehmud",
+        },
+        {
+          platform: "Instagram",
+          username: "farhan.ehmud",
+          link: "https://instagram.com/farhan.ehmud",
+        },
+      ],
+    },
+    {
+      name: "Rachel Ooi",
+      role: "Events lead",
+      year: 2024,
+      description: "",
+      image: "",
+      socialMedia: [],
     },
     // More 2024 members...
   ],

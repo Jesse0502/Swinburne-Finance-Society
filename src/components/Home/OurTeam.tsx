@@ -83,7 +83,7 @@ const OurTeam = () => {
             <Image
               h={"350px"}
               w={["full", "300px"]}
-              src={member.image ?? "/logo.jpg"}
+              src={member.image || "/Portrait_Placeholder.png"}
             />
             <Box py="3" px="2">
               <Text color="gray">{member.role}</Text>

@@ -25,15 +25,12 @@ const Alumni = () => {
   const [selectedYear, setSelectedYear] = useState(allYears[0]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Get all members from all years
   const allMembers = useMemo(() => {
     return Object.values(committeeMembers).flat();
   }, []);
 
-  // Filter members based on search query across all years
   const filteredMembers = useMemo(() => {
     if (!searchQuery.trim()) {
-      // If no search query, show members from selected year
       return committeeMembers[selectedYear] || [];
     }
 
@@ -42,7 +39,6 @@ const Alumni = () => {
       (member) =>
         member.name.toLowerCase().includes(query) ||
         member.role.toLowerCase().includes(query)
-      // (member.description && member.description.toLowerCase().includes(query))
     );
   }, [searchQuery, selectedYear, allMembers]);
 
@@ -85,7 +81,7 @@ const Alumni = () => {
               setSelectedYear(selected?.value || allYears[0])
             }
             defaultValue={{ label: allYears[0].toString(), value: allYears[0] }}
-            isDisabled={!!searchQuery.trim()} // Disable year select when searching
+            isDisabled={!!searchQuery.trim()}
           />
         </Box>
         <Flex gap="2" w={["full", "48vh"]}>
@@ -101,7 +97,6 @@ const Alumni = () => {
           <Button
             onClick={() => {
               if (searchQuery.trim()) {
-                // Clear search when button is clicked and there's a query
                 setSearchQuery("");
               }
             }}
@@ -115,6 +110,7 @@ const Alumni = () => {
           {filteredMembers.length > 0 ? (
             filteredMembers.map((member, idx) => (
               <AlumniTab
+                searchQuery={searchQuery}
                 key={`${member.name}-${idx}-${member.role}`}
                 member={member}
               />
@@ -132,9 +128,11 @@ const Alumni = () => {
 };
 
 const AlumniTab = ({
+  searchQuery,
   member,
 }: {
   member: (typeof committeeMembers)[number][number];
+  searchQuery: String;
 }) => {
   const [showMore, setShowMore] = useState(false);
 
@@ -151,15 +149,14 @@ const AlumniTab = ({
       key={member.name + member.year + member.year}
       overflow={"hidden"}
       flexDir={"column"}
-      //   flex="4"
     >
       <Box pos="relative">
         <Image
-          w={["full", "40vh"]}
+          w={["50vh", "40vh"]}
           objectFit={"cover"}
           //   pos="absolute"
-          h={["full", "40vh"]}
-          src={member.image ?? "logo.jpg"}
+          h={["50vh", "40vh"]}
+          src={member.image || "./Portrait_Placeholder.png"}
         />
         <Flex
           flexDir={"column"}
@@ -172,12 +169,12 @@ const AlumniTab = ({
           {member.socialMedia?.map((social) => (
             <Box
               as={Link}
+              display={social.link ? "block" : "none"}
               // @ts-ignore
               href={social.link}
               // @ts-ignore
               _target={"_blank"}
               zIndex={999}
-              //   position="absolute"
               key={social.username + social.platform}
               overflow="hidden"
               textDecoration="none"
@@ -245,32 +242,44 @@ const AlumniTab = ({
           ))}
         </Flex>
       </Box>
-      <Text mt="5" fontSize={"3xl"} color={darkPrimeColor}>
-        {member.name}
+      <Text
+        mt="5"
+        fontSize={"3xl"}
+        w="full"
+        textAlign="center"
+        color={darkPrimeColor}
+      >
+        {member.name} {searchQuery.length ? `(${member.year})` : ""}
       </Text>
       <Text pb="3" opacity="0.6">
         {member.role}
       </Text>
 
-      <Text
-        w="35vh"
-        lineClamp={showMore ? Infinity : 4}
-        textAlign={"center"}
-        mt="2"
-        dangerouslySetInnerHTML={{ __html: `${member.description}` }}
-      ></Text>
-      <Text
-        onClick={() => {
-          setShowMore(!showMore);
-        }}
-        as="span"
-        opacity={0.7}
-        _hover={{ cursor: "pointer" }}
-        textDecor={"underline"}
-      >
-        {" "}
-        {showMore ? "Show Less" : "Show More"}
-      </Text>
+      {member.description ? (
+        <>
+          <Text
+            w="35vh"
+            lineClamp={showMore ? Infinity : 4}
+            textAlign={"center"}
+            mt="2"
+            dangerouslySetInnerHTML={{ __html: `${member.description}` }}
+          ></Text>
+          <Text
+            onClick={() => {
+              setShowMore(!showMore);
+            }}
+            as="span"
+            opacity={0.7}
+            _hover={{ cursor: "pointer" }}
+            textDecor={"underline"}
+          >
+            {" "}
+            {showMore ? "Show Less" : "Show More"}
+          </Text>
+        </>
+      ) : (
+        <Text opacity={0.5}></Text>
+      )}
     </Flex>
   );
 };

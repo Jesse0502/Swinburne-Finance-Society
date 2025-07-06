@@ -19,7 +19,7 @@ import { useForm } from "@formspree/react";
 
 const ContactUs = () => {
   const [state, handleSubmit] = useForm(
-    process.env.NEXT_PUBLIC_FORM || "myForm"
+    process.env.NEXT_PUBLIC_FORM || "mpwrbbra"
   );
 
   const [formData, setFormData] = useState({
@@ -172,7 +172,8 @@ const ContactUs = () => {
             borderLeft={"2px solid black"}
             px={["4", "10"]}
             py="5"
-            w={["100%", "100%"]}
+            flexDir={["column", "row"]}
+            w={"100%"}
             h="full"
             gap="8"
             pr={["4", "32"]}
@@ -180,7 +181,7 @@ const ContactUs = () => {
           >
             <Flex
               flex="2"
-              w={["10vh", "full"]}
+              w={["48vh", "full"]}
               justify={"space-between"}
               h="50vh"
               flexDir={"column"}
@@ -260,18 +261,19 @@ const ContactUs = () => {
               h="50vh"
               fontSize={"sm"}
               gap="6"
-              mt="5"
-              flexDir={"column"}
+              mt={["2", "5"]}
+              pb={["2vh", ""]}
+              flexDir={["column"]}
             >
               <Flex gap="3">
                 <Image h="5" src="email-icon.png" />
-                <Text opacity="0.7" w={["10vh", "max"]} textWrap={"pretty"}>
+                <Text opacity="0.7" w={["max", "max"]} textWrap={"pretty"}>
                   swinurnefinance@gmail.com
                 </Text>
               </Flex>
               <Flex gap="3">
                 <Image h="5" src="location-icon.png" />
-                <Text opacity="0.7" w={["10vh", "max"]} textWrap={"pretty"}>
+                <Text opacity="0.7" w={"full"} textWrap={["nowrap", "wrap"]}>
                   Swinburne University: Hawthorn, Victoria
                 </Text>
               </Flex>

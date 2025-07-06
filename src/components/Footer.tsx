@@ -70,7 +70,7 @@ const Footer = () => {
         bg="white"
       />
       <Text textAlign={"center"} opacity={"0.7"} py="10">
-        © 2025 Swinburne Finance Club
+        © {`${new Date().getFullYear()}`} Swinburne Finance Club
       </Text>
     </Box>
   );
