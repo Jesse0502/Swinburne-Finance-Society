@@ -299,7 +299,7 @@ Join us for SFS’s Induction Night, where we:
 - Explore exciting finance career and other opportunities
 - Connect with like-minded peers and industry-driven individuals`,
     link: "https://www.instagram.com/p/DG_GeA3vk3q/",
-    image: "./events/induction-night.jpg",
+    image: "./events/Induction-night.jpg",
     location: "The Node",
     dateTime: new Date("2025-03-12T18:00:00"),
     ticketLink: null,
