@@ -16,9 +16,9 @@ const EventTab = ({ i }: { i?: EventInterface }) => {
         <Image
           objectFit={"contain"}
           src={i?.image}
-          minW={"70vh"}
+          minW={["100%", "70vh"]}
           h={"50vh"}
-          rounded="md"
+          rounded="xl"
         />
         <Flex
           flexDir={["column", "row"]}

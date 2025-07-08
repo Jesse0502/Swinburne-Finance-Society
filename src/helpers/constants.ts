@@ -167,18 +167,13 @@ I’m always seeking opportunities to learn, grow, and challenge myself—whethe
       name: "Amrit Loyal",
       role: "Partnerships director",
       year: 2025,
-      description: ``,
-      image: "",
+      description: `As the Partnerships Director for the Finance Society, my role is dedicated to building amd maintaining strong relationships with industry professionals, organisations, and other student bodies to create valuable opportunities for our members. I’m passionate about fostering collaboration and ensuring our society remains connected to the wider professional landscape.`,
+      image: "./amit-loyal.jpg",
       socialMedia: [
-        {
-          platform: "Instagram",
-          username: "",
-          link: "",
-        },
         {
           platform: "Linkedin",
           username: "Linkedin",
-          link: "",
+          link: "https://www.linkedin.com/in/amrit-loyal-b07a6527a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         },
       ],
     },
