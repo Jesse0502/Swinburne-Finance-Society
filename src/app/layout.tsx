@@ -12,7 +12,7 @@ const inter = Goldman(
 );
 
 export const metadata: Metadata = {
-  title: "Swinburne Finance Club",
+  title: "Swinburne Finance Society",
   description: "Created by ♥ in Melbourne",
 };
 

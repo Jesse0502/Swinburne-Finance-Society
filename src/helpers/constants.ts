@@ -33,12 +33,12 @@ export const committeeMembers: { [year: number]: CommitteeMember[] } = {
         {
           platform: "LinkedIn",
           username: "farhan-ehmud",
-          link: "https://linkedin.com/in/farhan-ehmud",
+          link: "https://www.linkedin.com/in/farhanehmudkader/",
         },
         {
           platform: "Instagram",
           username: "farhan.ehmud",
-          link: "https://instagram.com/farhan.ehmud",
+          link: "https://www.instagram.com/f1reandice/",
         },
       ],
     },
@@ -53,12 +53,12 @@ export const committeeMembers: { [year: number]: CommitteeMember[] } = {
         {
           platform: "LinkedIn",
           username: "william-keehne",
-          link: "https://linkedin.com/in/william-keehne",
+          link: "https://www.linkedin.com/in/william-keehne-091b641b9/",
         },
         {
           platform: "Instagram",
           username: "william-keehne",
-          link: "https://instagram.com/william-keehne",
+          link: "https://www.instagram.com/bill.keehne/",
         },
       ],
     },
@@ -131,12 +131,12 @@ export const committeeMembers: { [year: number]: CommitteeMember[] } = {
         {
           platform: "Instagram",
           username: "Okayyyyaman",
-          link: "https://instagram.com/Okayyyyaman",
+          link: "https://instagram.com/yeahitsaditya_",
         },
         {
           platform: "Linkedin",
           username: "Linkedin",
-          link: "https://www.linkedin.com/in/amandeep-kaur-gurmeet-singh-109434284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          link: "https://www.linkedin.com/in/adityajain2805/",
         },
       ],
     },

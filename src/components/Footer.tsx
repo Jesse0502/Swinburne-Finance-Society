@@ -5,6 +5,7 @@ import {
   Flex,
   Heading,
   Image,
+  Link,
   StepsSeparator,
   Text,
 } from "@chakra-ui/react";
@@ -40,23 +41,32 @@ const Footer = () => {
                 Quick Links
               </Heading>
               {[
-                "Events",
-                "Contact Us",
-                "About Us",
-                "Instagram",
-                "Linkedin",
+                { name: "Events", link: "/our-events" },
+                { name: "Contact Us", link: "/contact-us" },
+                { name: "About Us", link: "/about-us" },
+                {
+                  name: "Instagram",
+                  link: "https://www.instagram.com/swin.finance/",
+                },
+                {
+                  name: "Linkedin",
+                  link: "https://www.linkedin.com/company/swinburne-finance-club/",
+                },
               ].map((t) => (
-                <Text
-                  textAlign={["center", "left"]}
-                  key={t}
-                  opacity="0.7"
-                  _hover={{
-                    textDecor: "underline",
-                    cursor: "pointer",
-                  }}
-                >
-                  {t}
-                </Text>
+                <Link href={t.link}>
+                  <Text
+                    textAlign={["center", "left"]}
+                    key={t.link}
+                    color={"white"}
+                    opacity="0.7"
+                    _hover={{
+                      textDecor: "underline",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {t.name}
+                  </Text>
+                </Link>
               ))}
             </Flex>
           </Flex>
@@ -70,7 +80,7 @@ const Footer = () => {
         bg="white"
       />
       <Text textAlign={"center"} opacity={"0.7"} py="10">
-        © {`${new Date().getFullYear()}`} Swinburne Finance Club
+        © {`${new Date().getFullYear()}`} Swinburne Finance Society
       </Text>
     </Box>
   );
