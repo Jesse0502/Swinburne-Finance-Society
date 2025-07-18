@@ -20,7 +20,7 @@ export interface CommitteeMember {
 export const committeeMembers: { [year: number]: CommitteeMember[] } = {
   2025: [
     {
-      name: "Farhan Ehmud",
+      name: "Farhan Kader",
       role: "Co-President",
       year: 2025,
       description: `Farhan is a penultimate-year Business student pursuing a double major in Analytics and Finance. He is passionate about leveraging analytics in finance, particularly for risk analysis in equity markets. His career aspirations lie in Portfolio Optimization and Quantitative Finance. Currently, he is helping develop a machine learning model at a startup called Weekly. He enjoys Calisthenics, Formula 1 and is an experienced guitarist.
@@ -167,7 +167,7 @@ I’m always seeking opportunities to learn, grow, and challenge myself—whethe
       name: "Amrit Loyal",
       role: "Partnerships director",
       year: 2025,
-      description: `As the Partnerships Director for the Finance Society, my role is dedicated to building amd maintaining strong relationships with industry professionals, organisations, and other student bodies to create valuable opportunities for our members. I’m passionate about fostering collaboration and ensuring our society remains connected to the wider professional landscape.`,
+      description: `A first-year student majoring in accounting, with an interest in corporate restructuring and long-term goals in strategic advisory. As the Partnerships Director for the Finance Society, my role is dedicated to building amd maintaining strong relationships with industry professionals, organisations, and other student bodies to create valuable opportunities for our members. I’m passionate about fostering collaboration and ensuring our society remains connected to the wider professional landscape. Outside of university, some hobbies I enjoy include playing the violin, spending time on creative projects, and discovering new restaurants.`,
       image: "./amit-loyal.jpg",
       socialMedia: [
         {

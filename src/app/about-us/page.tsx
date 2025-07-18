@@ -39,7 +39,7 @@ const AboutUs = () => {
             WHO WE ARE
           </Text>
           <Text fontSize={["4xl", "5xl"]}>
-            Strategic Financiers & Visionary Leaders
+            Next Generation of Corporate Leadership
           </Text>
         </Center>
       </Box>
@@ -49,14 +49,16 @@ const AboutUs = () => {
           textAlign={"left"}
           color={darkPrimeColor}
         >
-          Driven by a cohort of ambitious Swinburne finance and business
-          students, we team up to share smart ideas and strategies, all while
-          helping to shape what's next in finance.
+          Led by a team of driven and ambitious finance students, Swinburne
+          Finance Society exists to prepare our members for successful careers
+          in the highly competitive fields of finance, accounting, and business
+          analytics – industries that will continue to shape the global economy
+          for decades to come.
         </Text>
         <Flex flexDir={["column", "row"]} gap="10" mt="10">
           {[
-            "Fuelled by the awesome finance and business smarts from Swinburne University, our club is all about exploring new ideas beyond just textbooks. We mix what we learn in lectures with real-world insights, sharing cool analyses and strategies to help each other understand how the financial world really works.",
-            `At our core, we're building future leaders who are ready to tackle anything. We do this by digging deep into what we study and getting hands-on experience. We love staying ahead of the curve in financial strategy, spotting new trends, and using emerging tech to make a real impact.`,
+            "As a member, you will take your university experience beyond the classroom, and gain access to exclusive events hosted in collaboration with our industry partners and Swinburne’s School of Business, Law, and Entrepreneurship faculty to build the professional networks you need to succeed in your career. Beyond our events, we are in the process of establishing further exciting initiatives, on schedule to be announced throughout semester two of 2025.",
+            `Follow our social media for updates on these initiatives, our semester two networking events, and to stay across our frequent market updates - analysis of economic and financial market news. All Swinburne students, regardless of your major and year level, are welcome to apply for membership. We are here to build the next generation of corporate leadership, and we would love for you to be a part of it.`,
           ].map((i) => (
             <Text key={i} flex="1" fontSize={"sm"} opacity="0.8">
               {i}

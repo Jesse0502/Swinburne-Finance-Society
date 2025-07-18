@@ -280,28 +280,29 @@ export default function Home() {
           alignItems={"center"}
         >
           {[
-            {
-              image: "./group-icon.svg",
-              heading: "Leadership",
-              text: "Take on leadership roles within the club to develop your management and decision-making skills.",
-            },
+            // {
+            //   image: "./group-icon.svg",
+            //   heading: "Leadership",
+            //   text: "Take on leadership roles within the club to develop your management and decision-making skills.",
+            // },
             {
               image: "./career-growth.svg",
-              heading: "Career Growth",
+              heading: "Career Readiness",
               text: "Connect with industry professionals and potential employers at our events and workshops.",
             },
             {
               image: "./partnership.svg",
               heading: "Partnerships and Exposure",
-              text: "Showcase your projects and achievements on our club's social media platforms, gaining valuable exposure.",
+              text: "Engage with a range of professionals respresting the industry's most well-regarded employers, bridging the gap between them and the talent and potential of out memebers",
             },
             {
               image: "./peer-growth.svg",
-              heading: "Peer Support and Community",
-              text: "Find a group of peers who understand your entrepreneurial journey and offer encouragement and motivation.",
+              heading: "Community",
+              text: "Build a community of hight achieving, professinal, and driven students, who may be among the next generation of leaders in our industry.",
             },
           ].map((i) => (
             <Flex
+              flex="1"
               flexDir={"column"}
               alignItems={"center"}
               justify={"center"}
