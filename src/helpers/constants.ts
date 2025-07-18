@@ -28,7 +28,7 @@ export const committeeMembers: { [year: number]: CommitteeMember[] } = {
       <b>Favourite firm</b> - SIG and Goldman Sachs
       <br/>
       <b>Favourite investor</b> - Naval Ravikant`,
-      image: "./farhan-ehmud.jpg",
+      image: "./farhan-kader.jpg",
       socialMedia: [
         {
           platform: "LinkedIn",
