@@ -19,7 +19,7 @@ import { useForm } from "@formspree/react";
 
 const ContactUs = () => {
   const [state, handleSubmit] = useForm(
-    process.env.NEXT_PUBLIC_FORM || "mpwrbbra"
+    process.env.NEXT_PUBLIC_FORM || "xdklppge"
   );
 
   const [formData, setFormData] = useState({
@@ -268,7 +268,7 @@ const ContactUs = () => {
               <Flex gap="3">
                 <Image h="5" src="email-icon.png" />
                 <Text opacity="0.7" w={["max", "max"]} textWrap={"pretty"}>
-                  swinurnefinance@gmail.com
+                  swinburnefinance@gmail.com
                 </Text>
               </Flex>
               <Flex gap="3">

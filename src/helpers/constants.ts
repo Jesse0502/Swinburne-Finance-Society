@@ -141,8 +141,8 @@ export const committeeMembers: { [year: number]: CommitteeMember[] } = {
       ],
     },
     {
-      name: "Hourt Rachana",
-      role: "SFS Capital Director",
+      name: "Rachana Hourt",
+      role: "Investment Director",
       year: 2025,
       description: `Third-year Finance student and a member of Swinburne Finance Society. I speak both Khmer, English and currently studying Chinese. 
 
@@ -165,7 +165,7 @@ I’m always seeking opportunities to learn, grow, and challenge myself—whethe
     },
     {
       name: "Amrit Loyal",
-      role: "Partnerships director",
+      role: "Sponsorship Director",
       year: 2025,
       description: `A first-year student majoring in accounting, with an interest in corporate restructuring and long-term goals in strategic advisory. As the Partnerships Director for the Finance Society, my role is dedicated to building amd maintaining strong relationships with industry professionals, organisations, and other student bodies to create valuable opportunities for our members. I’m passionate about fostering collaboration and ensuring our society remains connected to the wider professional landscape. Outside of university, some hobbies I enjoy include playing the violin, spending time on creative projects, and discovering new restaurants.`,
       image: "./amit-loyal.jpg",
